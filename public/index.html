@@ -8,24 +8,39 @@
     <script src="app.js"></script>
 
     <title>Hitter statistics</title>
+
+    <style>
+        [ng-click],
+        [data-ng-click],
+        [x-ng-click] {
+            cursor: pointer;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
 </head>
 <body ng-app="baseballStats">
 <table ng-controller="HitterStatsController">
     <tr>
-        <th>AVG</th>
-        <th>HR</th>
-        <th>RBI</th>
-        <th>RUNS</th>
-        <th>SB</th>
-        <th>OPS</th>
+        <th><span ng-click="reorder('given_name')">Name <span ng-if="params.sortBy == 'given_name'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span> </th>
+        <th><span ng-click="reorder('surname')">Surname <span ng-if="params.sortBy == 'surname'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('avg')">AVG <span ng-if="params.sortBy == 'avg'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('home_runs')">HR <span ng-if="params.sortBy == 'home_runs'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('rbi')">RBI <span ng-if="params.sortBy == 'rbi'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('runs')">RUNS <span ng-if="params.sortBy == 'runs'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('steals')">SB <span ng-if="params.sortBy == 'steals'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
+        <th><span ng-click="reorder('ops')">OPS <span ng-if="params.sortBy == 'ops'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>
     </tr>
 <tr ng-repeat="hitter in hitters">
-    <td>{{hitter.avg}}</td>
-    <td>{{hitter.hr}}</td>
+    <td>{{hitter.given_name}}</td>
+    <td>{{hitter.surname}}</td>
+    <td>{{hitter.avg | number}}</td>
+    <td>{{hitter.home_runs}}</td>
     <td>{{hitter.rbi}}</td>
     <td>{{hitter.runs}}</td>
-    <td>{{hitter.sb}}</td>
-    <td>{{hitter.ops}}</td>
+    <td>{{hitter.steals}}</td>
+    <td>{{hitter.ops | number}}</td>
 </tr>
 </table>
 </body>
