@@ -21,7 +21,7 @@
     </style>
 </head>
 <body ng-app="baseballStats">
-<div ng-controller="HitterStatsController"
+<div ng-controller="HitterStatsController">
 <div ng-show="failure.error">{{failure.msg}}</div>
 <table>
     <tr>
@@ -45,5 +45,6 @@
     <td>{{hitter.ops | number}}</td>
 </tr>
 </table>
+</div>
 </body>
 </html>
