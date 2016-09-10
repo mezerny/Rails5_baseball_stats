@@ -1,24 +1,21 @@
-# README
+# Baseball statistics app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is build as a Rails5 API application with Angular JS frontend part.
+Since this project is quite small, I decided to create a minimal Angular JS structure without separation in into modules, without routing, custom directives etc.
 
-Things you may want to cover:
+I also used Rails API application to serve static resources, like index.html and app.js.
 
-* Ruby version
+Rails project has some RSpec specs for routing, controller and requests. 
+I decided, that there is no need to write tests for model classes, since there is nothing to test there
+(we don't need specific validations or logic in our small project)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are a number of migrations to create database schema.
+Also I did a small rake task called "prepare_db" that I used to parse provided XML file and populate data into DB.
+Please take into account, that it is a one-time task, that shouldn't be used several times.
+If you want to use it, please reset database first to ensure that you don't have two identical copies of the same data in DB.
+  
+Also it should be noted, that I didn't spend any efforts on visual design, so it is just a simple HTML table without any styles etc.
+ 
+ 

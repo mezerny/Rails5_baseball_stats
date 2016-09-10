@@ -21,7 +21,9 @@
     </style>
 </head>
 <body ng-app="baseballStats">
-<table ng-controller="HitterStatsController">
+<div ng-controller="HitterStatsController"
+<div ng-show="failure.error">{{failure.msg}}</div>
+<table>
     <tr>
         <th><span ng-click="reorder('given_name')">Name <span ng-if="params.sortBy == 'given_name'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span> </th>
         <th><span ng-click="reorder('surname')">Surname <span ng-if="params.sortBy == 'surname'"><span ng-show="params.order">↑</span><span ng-hide="params.order">↓</span></span></span></th>

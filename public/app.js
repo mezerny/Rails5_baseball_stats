@@ -8,6 +8,8 @@ angular.module('baseballStats', ['ngResource'])
         var loadStats = function(){
             HitterStats.query({order:  $scope.params.sortBy + ($scope.params.order ? ' asc' : ' desc'), limit: $scope.params.limit}, function (result) {
                 $scope.hitters = result;
+            }, function(error){
+                $scope.failure = {error: error, msg: 'Error! Something unexpected happened. Please try again later'};
             })
         };
         loadStats();
