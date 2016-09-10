@@ -11,6 +11,7 @@ I decided, that there is no need to write tests for model classes, since there i
 
 
 * Database initialization
+
 There are a number of migrations to create database schema.
 Also I did a small rake task called "prepare_db" that I used to parse provided XML file and populate data into DB.
 Please take into account, that it is a one-time task, that shouldn't be used several times.
