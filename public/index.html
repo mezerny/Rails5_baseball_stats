@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+
+    <title>Hitter statistics</title>
+</head>
+<body ng-app="baseballStats">
+<table ng-controller="HitterStatsController">
+    <tr>
+        <th>AVG</th>
+        <th>HR</th>
+        <th>RBI</th>
+        <th>RUNS</th>
+        <th>SB</th>
+        <th>OPS</th>
+    </tr>
+<tr ng-repeat="hitter in hitters">
+    <td>{{hitter.avg}}</td>
+    <td>{{hitter.hr}}</td>
+    <td>{{hitter.rbi}}</td>
+    <td>{{hitter.runs}}</td>
+    <td>{{hitter.sb}}</td>
+    <td>{{hitter.ops}}</td>
+</tr>
+</table>
+</body>
+</html>
